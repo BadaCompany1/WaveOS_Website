@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveOS - The Future of Technology</title>
+    <!-- Inclure les bibliothèques i18next pour la traduction -->
+    <script src="i18next.min.js"></script>
+    <script src="i18next-xhr-backend.min.js"></script>
+    <script src="i18nextBrowserLanguageDetector.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Inclure votre fichier CSS pour personnaliser le style -->
+</head>
+<body>
+    <header>
+        <h1>WaveOS</h1>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#promote">Promote</a></li>
+                <li><a href="#wiki">Wiki</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to the Future of Technology</h2>
+            <p>WaveOS is a revolutionary operating system designed to unify all platforms and deliver exceptional performance, top-notch security, and unmatched interconnectivity.</p>
+            <a href="#downloads" class="btn">Coming Soon</a>
+        </div>
+    </section>
+    
+    <section id="features">
+        <div class="container">
+            <h3>Key Features</h3>
+            <div class="feature">
+                <img src="security-icon.png" alt="Top-Notch Security">
+                <h4>Top-Notch Security</h4>
+                <p>Enjoy military-grade security to protect your data and privacy.</p>
+            </div>
+            <div class="feature">
+                <img src="interconnectivity-icon.png" alt="Unmatched Interconnectivity">
+                <h4>Unmatched Interconnectivity</h4>
+                <p>Easily communicate across different platforms and devices.</p>
+            </div>
+            <div class="feature">
+                <img src="efficiency-icon.png" alt="Exceptional Efficiency">
+                <h4>Exceptional Efficiency</h4>
+                <p>Optimize performance for an outstanding user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture">
+        <div class="container">
+            <h3>System Architecture</h3>
+            <p>WaveOS is based on a deeply enhanced BSD operating system with a proprietary NeXT Kernel, programmed in Air, our own proprietary programming language. It also integrates Indigo Platform our own proprietary operating system. This combination offers a unique and highly customizable system architecture that sets WaveOS apart from the rest.</p>
+        </div>
+    </section>
+
+    <section id="promote">
+        <div class="container">
+            <h3>Promote WaveOS</h3>
+            <p>WaveOS is not just an operating system; it's a revolution in technology. Join us in spreading the word about WaveOS and the future it represents. Let's create a connected and secure world together.</p>
+        </div>
+    </section>
+
+    <section id="wiki">
+        <div class="container">
+            <h3>WaveOS Wiki</h3>
+            <p>Explore the in-depth documentation and information about WaveOS in our Wiki. Get insights into its features, development, and more. Knowledge is power, and we empower you with WaveOS.</p>
+            <a href="wiki.html" class="btn">Visit Wiki</a>
+        </div>
+    </section>
+    
+    <section id="downloads">
+        <div class="container">
+            <h3>Download WaveOS Today</h3>
+            <p>Join the technological revolution and experience all that WaveOS has to offer. Download the version that suits your device.</p>
+            <a href="download-waveos.html" class="btn">Coming Soon</a>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Do you have questions or comments? Feel free to contact us. We're here to assist you.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Bada. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Configuration pour i18next et la détection de la langue du navigateur
+        i18next
+            .use(i18nextXHRBackend)
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                debug: false,
+                fallbackLng: 'en',
+                backend: {
+                    loadPath: 'locales/{{lng}}.json'
+                }
+            })
+            .then(function (t) {
+                document.documentElement.lang = i18next.language;
+                document.querySelector('h1').textContent = t('title');
+                document.querySelector('h2').textContent = t('welcome');
+                document.querySelector('p').textContent = t('description');
+                document.querySelector('a.btn').textContent = t('download');
+                // Assurez-vous de traduire les autres éléments de votre page de la même manière
+            });
+    </script>
+</body>
+</html>
